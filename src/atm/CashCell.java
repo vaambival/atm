@@ -32,6 +32,9 @@ public final class CashCell {
             throw new IllegalArgumentException("n must be >= 0");
         }
         count += n;
+        if (count < 0) {
+            throw new IllegalArgumentException("Overflow count");
+        }
     }
 
     public void remove(int n) {
@@ -39,7 +42,7 @@ public final class CashCell {
             throw new IllegalArgumentException("n must be >= 0");
         }
         if (n > count) {
-            throw new IllegalArgumentException("not enough banknotes in cell");
+            throw new IllegalArgumentException("Not enough banknotes in cell");
         }
         count -= n;
     }
