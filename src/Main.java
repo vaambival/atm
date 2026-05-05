@@ -16,7 +16,7 @@ public class Main {
         deposit.put(Denomination.D50, 10);
         atm.deposit(deposit);
 
-        int expectedBalance = 2 * 1000 + 1 * 500 + 3 * 200 + 10 * 50;
+        long expectedBalance = 2 * 1000 + 1 * 500 + 3 * 200 + 10 * 50;
         assert atm.balance() == expectedBalance : "Balance mismatch after deposit";
 
         var w1 = atm.withdraw(1250);
