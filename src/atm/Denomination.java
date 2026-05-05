@@ -1,7 +1,7 @@
 package atm;
 
 import java.util.Arrays;
-import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public enum Denomination {
@@ -30,6 +30,6 @@ public enum Denomination {
         return FOR_DISPENSE;
     }
 
-    private static final List<Denomination> FOR_DISPENSE =
-            List.of(values());
+    private static final List<Denomination> FOR_DISPENSE = Arrays.stream(values())
+            .sorted(Comparator.comparingInt(Denomination::value).reversed()).toList();
 }
