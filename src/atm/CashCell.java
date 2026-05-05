@@ -31,10 +31,10 @@ public final class CashCell {
         if (n < 0) {
             throw new IllegalArgumentException("n must be >= 0");
         }
-        count += n;
-        if (count < 0) {
+        if (count + n < 0) {
             throw new IllegalArgumentException("Overflow count");
         }
+        count += n;
     }
 
     public void remove(int n) {
